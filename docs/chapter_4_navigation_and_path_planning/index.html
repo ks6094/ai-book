@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-chapter_4_navigation_and_path_planning" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">Navigation with Nav2 | Physical AI &amp; Humanoid Robotics Course</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://your-docusaurus-site.example.com/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://your-docusaurus-site.example.com/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://your-docusaurus-site.example.com/docs/chapter_4_navigation_and_path_planning"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Navigation with Nav2 | Physical AI &amp; Humanoid Robotics Course"><meta data-rh="true" name="description" content="What Is Nav2?"><meta data-rh="true" property="og:description" content="What Is Nav2?"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://your-docusaurus-site.example.com/docs/chapter_4_navigation_and_path_planning"><link data-rh="true" rel="alternate" href="https://your-docusaurus-site.example.com/docs/chapter_4_navigation_and_path_planning" hreflang="en"><link data-rh="true" rel="alternate" href="https://your-docusaurus-site.example.com/docs/chapter_4_navigation_and_path_planning" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Navigation with Nav2","item":"https://your-docusaurus-site.example.com/docs/chapter_4_navigation_and_path_planning"}]}</script><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="Physical AI &amp; Humanoid Robotics Course RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="Physical AI &amp; Humanoid Robotics Course Atom Feed"><link rel="stylesheet" href="/assets/css/styles.6b6a1e74.css">
+<script src="/assets/js/runtime~main.4972d4c6.js" defer="defer"></script>
+<script src="/assets/js/main.3b95c1cf.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/img/logo.svg"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/img/logo.svg" alt="Robotics Book Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/img/logo.svg" alt="Robotics Book Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Physical AI &amp; Humanoid Robotics</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/docs/course-overview">Course Overview</a><div class="navbar__item dropdown dropdown--hoverable"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link">Modules</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/docs/chapter_1_ros2_overview">Module 1: ROS 2</a></li><li><a class="dropdown__link" href="/docs/chapter_1_digital_twin_overview">Module 2: Digital Twin</a></li><li><a class="dropdown__link" href="/docs/chapter_1_ai_robot_brain_overview">Module 3: AI-Robot Brain</a></li><li><a class="dropdown__link" href="/docs/chapter_1_vla_overview">Module 4: VLA</a></li></ul></div><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/docs/course-overview">All Chapters</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href="https://github.com/your-org/your-project" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/course-overview"><span title="Course Overview" class="categoryLinkLabel_W154">Course Overview</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/chapter_1_ros2_overview"><span title="Module 1: The Robotic Nervous System (ROS 2)" class="categoryLinkLabel_W154">Module 1: The Robotic Nervous System (ROS 2)</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/chapter_1_digital_twin_overview"><span title="Module 2: The Digital Twin (Gazebo &amp; Unity)" class="categoryLinkLabel_W154">Module 2: The Digital Twin (Gazebo &amp; Unity)</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/docs/chapter_1_ai_robot_brain_overview"><span title="Module 3: The AI-Robot Brain (NVIDIA Isaac™)" class="categoryLinkLabel_W154">Module 3: The AI-Robot Brain (NVIDIA Isaac™)</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/chapter_1_ai_robot_brain_overview"><span title="What Is the AI-Robot Brain?" class="linkLabel_WmDU">What Is the AI-Robot Brain?</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/chapter_2_isaac_sim_photorealistic_simulation"><span title="NVIDIA Isaac Sim" class="linkLabel_WmDU">NVIDIA Isaac Sim</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/chapter_3_isaac_ros_accelerated_perception"><span title="Isaac ROS and Accelerated Perception" class="linkLabel_WmDU">Isaac ROS and Accelerated Perception</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/docs/chapter_4_navigation_and_path_planning"><span title="Navigation with Nav2" class="linkLabel_WmDU">Navigation with Nav2</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/chapter_1_vla_overview"><span title="Module 4: Vision-Language-Action (VLA)" class="categoryLinkLabel_W154">Module 4: Vision-Language-Action (VLA)</span></a></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">Module 3: The AI-Robot Brain (NVIDIA Isaac™)</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Navigation with Nav2</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Navigation with Nav2</h1></header>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="what-is-nav2">What Is Nav2?<a href="#what-is-nav2" class="hash-link" aria-label="Direct link to What Is Nav2?" title="Direct link to What Is Nav2?" translate="no">​</a></h2>
+<p>Navigation2 (Nav2) is the navigation stack for ROS 2, designed to provide autonomous navigation capabilities for mobile robots. It&#x27;s the successor to the ROS 1 navigation stack, rebuilt from the ground up to take advantage of ROS 2&#x27;s features and modern robotics requirements.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="navigation-stacks-in-ros-2">Navigation Stacks in ROS 2<a href="#navigation-stacks-in-ros-2" class="hash-link" aria-label="Direct link to Navigation Stacks in ROS 2" title="Direct link to Navigation Stacks in ROS 2" translate="no">​</a></h3>
+<p>Nav2 provides a complete framework for robot navigation that includes:</p>
+<p><strong>Localization</strong>: Determining the robot&#x27;s position in a known or unknown map</p>
+<ul>
+<li class="">AMCL (Adaptive Monte Carlo Localization) for probabilistic localization</li>
+<li class="">SLAM integration for simultaneous localization and mapping</li>
+<li class="">Particle filters for handling uncertainty in position estimation</li>
+</ul>
+<p><strong>Mapping</strong>: Creating and maintaining maps of the environment</p>
+<ul>
+<li class="">SLAM capabilities for building maps in unknown environments</li>
+<li class="">Map management and updating</li>
+<li class="">Multi-session mapping capabilities</li>
+</ul>
+<p><strong>Path Planning</strong>: Computing optimal paths from start to goal positions</p>
+<ul>
+<li class="">Global planners for long-term path planning</li>
+<li class="">Local planners for obstacle avoidance and dynamic path adjustment</li>
+<li class="">Trajectory optimization for smooth, efficient motion</li>
+</ul>
+<p><strong>Recovery Behaviors</strong>: Handling navigation failures and getting unstuck</p>
+<ul>
+<li class="">Predefined recovery behaviors for common failure scenarios</li>
+<li class="">Customizable recovery sequences</li>
+<li class="">Safe fallback procedures</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="architecture-components">Architecture Components<a href="#architecture-components" class="hash-link" aria-label="Direct link to Architecture Components" title="Direct link to Architecture Components" translate="no">​</a></h3>
+<p>Nav2&#x27;s architecture is built around a behavior tree structure that provides:</p>
+<ul>
+<li class=""><strong>Flexibility</strong>: Different behaviors can be composed dynamically</li>
+<li class=""><strong>Robustness</strong>: Well-defined failure handling and recovery</li>
+<li class=""><strong>Modularity</strong>: Components can be swapped or customized</li>
+<li class=""><strong>Real-time Performance</strong>: Efficient execution for responsive navigation</li>
+</ul>
+<p>The main components include:</p>
+<ul>
+<li class=""><strong>Navigation Lifecycle Manager</strong>: Manages the state and lifecycle of navigation components</li>
+<li class=""><strong>Planners Server</strong>: Runs global and local planners</li>
+<li class=""><strong>Controller Server</strong>: Handles trajectory execution and local path following</li>
+<li class=""><strong>Recovery Server</strong>: Manages recovery behaviors when navigation fails</li>
+<li class=""><strong>BT Navigator</strong>: Executes behavior trees for navigation tasks</li>
+<li class=""><strong>Waypoint Follower</strong>: Handles navigation to multiple waypoints</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="path-planning-for-humanoids">Path Planning for Humanoids<a href="#path-planning-for-humanoids" class="hash-link" aria-label="Direct link to Path Planning for Humanoids" title="Direct link to Path Planning for Humanoids" translate="no">​</a></h2>
+<p>Humanoid robots present unique challenges for navigation that require specialized consideration compared to wheeled or tracked robots. These challenges stem from the fundamental differences in how humanoid robots move and interact with their environment.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="bipedal-constraints-and-movement">Bipedal Constraints and Movement<a href="#bipedal-constraints-and-movement" class="hash-link" aria-label="Direct link to Bipedal Constraints and Movement" title="Direct link to Bipedal Constraints and Movement" translate="no">​</a></h3>
+<p><strong>Balance Requirements</strong>: Unlike wheeled robots that maintain continuous contact with the ground, humanoid robots must maintain dynamic balance while walking. This affects navigation in several ways:</p>
+<ul>
+<li class="">Path planning must consider balance constraints</li>
+<li class="">Turning maneuvers require special attention</li>
+<li class="">Terrain traversal must account for step height and stability</li>
+<li class="">Gait patterns affect navigation speed and energy consumption</li>
+</ul>
+<p><strong>Foot Placement Planning</strong>: Humanoid navigation must carefully plan foot placement:</p>
+<ul>
+<li class="">Each step must land on stable, traversable terrain</li>
+<li class="">Foot positions must maintain center of mass within support polygon</li>
+<li class="">Step timing must coordinate with balance control</li>
+<li class="">Obstacle clearance must account for leg swing motion</li>
+</ul>
+<p><strong>Center of Mass Management</strong>: The robot&#x27;s center of mass must be carefully managed during navigation:</p>
+<ul>
+<li class="">Paths must avoid sharp turns that could destabilize the robot</li>
+<li class="">Speed adjustments needed based on terrain and turning requirements</li>
+<li class="">Smooth trajectories required to maintain balance</li>
+<li class="">Coordination with whole-body control systems</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="humanoid-specific-navigation-considerations">Humanoid-Specific Navigation Considerations<a href="#humanoid-specific-navigation-considerations" class="hash-link" aria-label="Direct link to Humanoid-Specific Navigation Considerations" title="Direct link to Humanoid-Specific Navigation Considerations" translate="no">​</a></h3>
+<p><strong>Stability-Aware Path Planning</strong>: Traditional path planning focuses on shortest distance or time, but humanoid robots need stability-aware planning:</p>
+<ul>
+<li class="">Paths should avoid narrow passages that require unstable stepping</li>
+<li class="">Gentle curves preferred over sharp turns</li>
+<li class="">Flat, stable surfaces prioritized over uneven terrain</li>
+<li class="">Recovery areas included for potential balance issues</li>
+</ul>
+<p><strong>Obstacle Interaction</strong>: Humanoid robots can potentially interact with obstacles differently than other robot types:</p>
+<ul>
+<li class="">Ability to step over small obstacles</li>
+<li class="">Potential to open doors or gates</li>
+<li class="">Need for larger safety margins due to balance concerns</li>
+<li class="">Consideration of object manipulability for path clearing</li>
+</ul>
+<p><strong>Energy Efficiency</strong>: Humanoid locomotion is energetically expensive, so navigation should consider:</p>
+<ul>
+<li class="">Energy-optimal paths that may not be shortest</li>
+<li class="">Efficient gait patterns for different terrains</li>
+<li class="">Rest points for extended navigation tasks</li>
+<li class="">Terrain classification for gait selection</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="obstacle-avoidance">Obstacle Avoidance<a href="#obstacle-avoidance" class="hash-link" aria-label="Direct link to Obstacle Avoidance" title="Direct link to Obstacle Avoidance" translate="no">​</a></h2>
+<p>Obstacle avoidance in humanoid robotics must account for the unique kinematic and dynamic constraints of bipedal locomotion.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="navigation-in-simulated-environments">Navigation in Simulated Environments<a href="#navigation-in-simulated-environments" class="hash-link" aria-label="Direct link to Navigation in Simulated Environments" title="Direct link to Navigation in Simulated Environments" translate="no">​</a></h3>
+<p>Simulated environments allow for safe testing and development of humanoid navigation capabilities:</p>
+<ul>
+<li class=""><strong>Physics Accuracy</strong>: Simulations must accurately model balance and stability for realistic navigation testing</li>
+<li class=""><strong>Terrain Variety</strong>: Simulated environments should include various terrain types to test humanoid-specific challenges</li>
+<li class=""><strong>Dynamic Obstacles</strong>: Moving obstacles that require reactive navigation behaviors</li>
+<li class=""><strong>Human Interaction</strong>: Simulated humans that the robot must navigate around safely</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="humanoid-specific-obstacle-avoidance">Humanoid-Specific Obstacle Avoidance<a href="#humanoid-specific-obstacle-avoidance" class="hash-link" aria-label="Direct link to Humanoid-Specific Obstacle Avoidance" title="Direct link to Humanoid-Specific Obstacle Avoidance" translate="no">​</a></h3>
+<p><strong>Step Height Considerations</strong>: Humanoid robots can step over obstacles up to a certain height, but navigation must consider:</p>
+<ul>
+<li class="">Maximum step height capabilities</li>
+<li class="">Stability during step-over maneuvers</li>
+<li class="">Alternative paths when step-over isn&#x27;t safe</li>
+<li class="">Integration with footstep planning algorithms</li>
+</ul>
+<p><strong>Turning Radius</strong>: Unlike wheeled robots, humanoid robots have complex turning dynamics:</p>
+<ul>
+<li class="">In-place turning vs. arc turning</li>
+<li class="">Space requirements for different turning maneuvers</li>
+<li class="">Balance considerations during turns</li>
+<li class="">Coordination with gait planning</li>
+</ul>
+<p><strong>Gait Adaptation</strong>: Navigation systems should adapt gait patterns based on environmental conditions:</p>
+<ul>
+<li class="">Normal walking gait for clear paths</li>
+<li class="">Careful stepping gait for cluttered environments</li>
+<li class="">Different gaits for various terrain types</li>
+<li class="">Integration with path planning for optimal performance</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="hands-on-exercises">Hands-On Exercises<a href="#hands-on-exercises" class="hash-link" aria-label="Direct link to Hands-On Exercises" title="Direct link to Hands-On Exercises" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="exercise-1-configure-nav2">Exercise 1: Configure Nav2<a href="#exercise-1-configure-nav2" class="hash-link" aria-label="Direct link to Exercise 1: Configure Nav2" title="Direct link to Exercise 1: Configure Nav2" translate="no">​</a></h3>
+<p>Configuring Nav2 for humanoid robots involves several steps:</p>
+<ol>
+<li class=""><strong>Create a robot configuration package</strong> with URDF, sensor configurations, and kinematic parameters</li>
+<li class=""><strong>Set up navigation parameters</strong> that account for humanoid-specific constraints</li>
+<li class=""><strong>Configure planners</strong> with appropriate costmaps and inflation parameters for humanoid safety margins</li>
+<li class=""><strong>Customize recovery behaviors</strong> for humanoid-specific failure scenarios</li>
+<li class=""><strong>Test in simulation</strong> before attempting real-world deployment</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="exercise-2-plan-paths-in-a-simulated-environment">Exercise 2: Plan Paths in a Simulated Environment<a href="#exercise-2-plan-paths-in-a-simulated-environment" class="hash-link" aria-label="Direct link to Exercise 2: Plan Paths in a Simulated Environment" title="Direct link to Exercise 2: Plan Paths in a Simulated Environment" translate="no">​</a></h3>
+<p>Planning paths in a simulated environment for humanoid robots requires:</p>
+<ol>
+<li class=""><strong>Load a humanoid robot model</strong> in Isaac Sim with appropriate sensors</li>
+<li class=""><strong>Create or load a map</strong> of the simulation environment</li>
+<li class=""><strong>Configure Nav2 parameters</strong> for humanoid-specific navigation</li>
+<li class=""><strong>Set navigation goals</strong> and observe path planning</li>
+<li class=""><strong>Analyze path characteristics</strong> for humanoid-appropriateness (turning radius, obstacle clearance, etc.)</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="exercise-3-navigate-around-obstacles">Exercise 3: Navigate Around Obstacles<a href="#exercise-3-navigate-around-obstacles" class="hash-link" aria-label="Direct link to Exercise 3: Navigate Around Obstacles" title="Direct link to Exercise 3: Navigate Around Obstacles" translate="no">​</a></h3>
+<p>Navigating around obstacles as a humanoid robot involves:</p>
+<ol>
+<li class=""><strong>Set up obstacle detection</strong> using Isaac ROS perception nodes</li>
+<li class=""><strong>Configure local planners</strong> for real-time obstacle avoidance</li>
+<li class=""><strong>Test navigation</strong> with various obstacle types and configurations</li>
+<li class=""><strong>Evaluate performance</strong> in terms of safety, efficiency, and stability</li>
+<li class=""><strong>Adjust parameters</strong> based on performance observations</li>
+</ol>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="nav2-architecture-for-humanoid-robots">Nav2 Architecture for Humanoid Robots<a href="#nav2-architecture-for-humanoid-robots" class="hash-link" aria-label="Direct link to Nav2 Architecture for Humanoid Robots" title="Direct link to Nav2 Architecture for Humanoid Robots" translate="no">​</a></h2>
+<p>The Nav2 architecture can be adapted for humanoid robots by considering the following components:</p>
+<p><strong>Costmap Configuration</strong>: Humanoid robots need specialized costmaps that account for:</p>
+<ul>
+<li class="">Larger safety margins for stability</li>
+<li class="">Step height and terrain traversability</li>
+<li class="">Balance-constrained turning requirements</li>
+<li class="">Whole-body collision checking rather than simple circular approximations</li>
+</ul>
+<p><strong>Planner Adaptation</strong>: Standard planners need modification for humanoid constraints:</p>
+<ul>
+<li class="">Footstep-aware global planning</li>
+<li class="">Stability-constrained local planning</li>
+<li class="">Gait-pattern-aware trajectory generation</li>
+<li class="">Balance recovery integration</li>
+</ul>
+<p><strong>Controller Integration</strong>: The controller server must coordinate with humanoid-specific controllers:</p>
+<ul>
+<li class="">Whole-body controllers for balance</li>
+<li class="">Footstep planners for bipedal locomotion</li>
+<li class="">Trajectory smoothing for stable motion</li>
+<li class="">Integration with low-level balance controllers</li>
+</ul>
+<p>Nav2 provides a robust foundation for humanoid navigation, but requires careful configuration and adaptation to account for the unique challenges of bipedal locomotion. The integration with Isaac Sim and Isaac ROS allows for comprehensive testing and validation of navigation capabilities in photorealistic simulation environments before deployment on physical robots.</p>
+<p>This approach ensures that humanoid robots can navigate safely and efficiently in human environments while maintaining the stability and balance required for bipedal locomotion. The combination of accurate simulation, GPU-accelerated perception, and specialized navigation planning creates a complete system for intelligent humanoid robot navigation.</p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/chapter_4_navigation_and_path_planning.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/chapter_3_isaac_ros_accelerated_perception"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Isaac ROS and Accelerated Perception</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/chapter_1_vla_overview"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Introduction to Vision-Language-Action</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#what-is-nav2" class="table-of-contents__link toc-highlight">What Is Nav2?</a><ul><li><a href="#navigation-stacks-in-ros-2" class="table-of-contents__link toc-highlight">Navigation Stacks in ROS 2</a></li><li><a href="#architecture-components" class="table-of-contents__link toc-highlight">Architecture Components</a></li></ul></li><li><a href="#path-planning-for-humanoids" class="table-of-contents__link toc-highlight">Path Planning for Humanoids</a><ul><li><a href="#bipedal-constraints-and-movement" class="table-of-contents__link toc-highlight">Bipedal Constraints and Movement</a></li><li><a href="#humanoid-specific-navigation-considerations" class="table-of-contents__link toc-highlight">Humanoid-Specific Navigation Considerations</a></li></ul></li><li><a href="#obstacle-avoidance" class="table-of-contents__link toc-highlight">Obstacle Avoidance</a><ul><li><a href="#navigation-in-simulated-environments" class="table-of-contents__link toc-highlight">Navigation in Simulated Environments</a></li><li><a href="#humanoid-specific-obstacle-avoidance" class="table-of-contents__link toc-highlight">Humanoid-Specific Obstacle Avoidance</a></li></ul></li><li><a href="#hands-on-exercises" class="table-of-contents__link toc-highlight">Hands-On Exercises</a><ul><li><a href="#exercise-1-configure-nav2" class="table-of-contents__link toc-highlight">Exercise 1: Configure Nav2</a></li><li><a href="#exercise-2-plan-paths-in-a-simulated-environment" class="table-of-contents__link toc-highlight">Exercise 2: Plan Paths in a Simulated Environment</a></li><li><a href="#exercise-3-navigate-around-obstacles" class="table-of-contents__link toc-highlight">Exercise 3: Navigate Around Obstacles</a></li></ul></li><li><a href="#nav2-architecture-for-humanoid-robots" class="table-of-contents__link toc-highlight">Nav2 Architecture for Humanoid Robots</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Docs</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/course-overview">Course Overview</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://stackoverflow.com/questions/tagged/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Stack Overflow<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://discordapp.com/invite/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Discord<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://x.com/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">X<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/blog">Blog</a></li><li class="footer__item"><a href="https://github.com/ks6094/ai-book" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 Physical AI & Humanoid Robotics Course. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>
